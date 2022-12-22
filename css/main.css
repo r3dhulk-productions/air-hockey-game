@@ -1,0 +1,238 @@
+button {
+  background-color: #D4EEF6;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #6a9de6;
+  box-shadow: 1px 1px black;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+#game-canvas {
+  width: 800px;
+  height: 400px;
+  border: 1px solid #6A9DE6;
+  border-radius: 40px;
+  box-shadow: 0px 0px 30px darkblue;
+}
+
+#result-screen {
+  position: absolute;
+  width: 200px;
+  height: 400px;
+  background: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  display: none;
+  z-index: 10;
+}
+
+#goal-screen {
+  position: absolute;
+  width: 800px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  border-radius: 40px;
+  box-shadow: 0px 0px 30px darkblue;
+}
+
+@keyframes animated-goal {
+  0% {color: #FF0000}
+  12.5% {color: #D90000}
+  25% {color: #B20000}
+  37.5% {color: #8C0000}
+  50% {color: #FF2626}
+  62.5% {color: #FF4C4C}
+  75% {color: #FF7373}
+  87.% {color: #FF002A}
+  100% {color: #FF0000}
+}
+
+.goal-goal {
+  font-size: 100px;
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: animated-goal;
+  animation-duration: 2s;
+  animation-iteration-count: 2;
+}
+
+#result-screen > img {
+  margin: 20px;
+}
+
+#result-screen > button {
+  margin: 10px;
+  height: 200px;
+  width: 75%;
+  cursor: pointer;
+}
+
+#result-screen > button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.game-window > #result-screen > #option-back {
+  height: auto;
+}
+
+.game-window > #result-screen > #pause-screen {
+  height: auto;
+}
+
+.game-window > #result-screen > #end-screen {
+  height: auto;
+}
+
+#fireball{
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.title-logo {
+  width: 250px;
+  margin-bottom: 5px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+.spanTimer button {
+  box-shadow: none;
+  margin: 5px;
+}
+
+.spanTimer button.pressed {
+  box-shadow: inset 0px 0px 80px #c1c1c1;
+}
+
+.spanTimer button:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.game-window{
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mid-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: auto;
+}
+
+.about-me {
+  width: 15%;
+  margin: 0px 50px;
+  font-family: 'Roboto', sans-serif;
+  background: #D4EEF6;
+  border: 2px solid #E2E2E2;
+  padding: 0px 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px darkblue;
+}
+
+.player {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 5px;
+}
+
+.fab, .fas {
+  margin: 10px;
+}
+
+.fab:hover, .fas:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.instruction {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  width: 450px;
+  background: #D4EEF6;
+  border: 1px solid #6A9DE6;
+  box-shadow: 1px 1px darkblue;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.wasd-keys, .arrow-keys {
+  height: 30px;
+  margin: 0 5px;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9){
+  .fullscreen-bg_video{
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9){
+  .fullscreen-bg_video{
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../images/snowbackground.jpg') center center / cover no-repeat;
+  }
+  .fullscreen-bg_video {
+    display: none;
+  }
+}
